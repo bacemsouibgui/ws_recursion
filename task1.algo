@@ -1,0 +1,13 @@
+// array polynome will be presented like this
+// an | an-1 | an-2 |...| a0==>taille du tab n+1
+
+FUNCTION horner(poly : ARRAY_OF FLOAT[n+1], start, end: INTEGER, x: FLOAT) : FUNCTION
+
+BEGIN
+    
+    IF (start<= end) THEN
+        
+        RETURN poly[end] + horner(poly, start, end-1, x)*x;
+    END_IF
+   
+END

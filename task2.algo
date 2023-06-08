@@ -1,0 +1,36 @@
+// isolation of last element
+FUNCTION rankLastPositif1(arr : ARRAY_OF INTEGER, n: INTEGER) : INTEGER
+
+
+BEGIN
+    
+    IF (n=0) THEN
+        return 0;
+    ELSE_IF (arr[n]>0) THEN
+    RETURN n;
+    ELSE
+    RETURN rankLastPositif1(arr, n-1);
+    END_IF
+END
+
+// isolation of first element
+
+FUNCTION rankLastPositif2(arr : ARRAY_OF INTEGER, start: INTEGER, VAR found: BOOLEAN) : INTEGER
+
+BEGIN
+    
+    IF (start>= arr.length) THEN
+        found:= FALSE
+        RETURN 0;
+
+    ELSE
+
+    rankLastPositif2(arr, start+1, found);
+
+    IF (NOT found AND arr[start]>0) THEN
+        
+        found:= true;
+        RETURN start;
+    END_IF
+    END_IF
+END
