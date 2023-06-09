@@ -1,0 +1,16 @@
+PROCEDURE hanoi(start, end, n:INTEGER)
+
+
+BEGIN
+    
+    IF (n>0) THEN
+        
+        hanois(start, middle(start,end),n-1);
+        //middle(start, end): return the middle tower between start and end.
+        move(n, start, end);
+        // move(n, start, end): move disk number n from start tower to end tower
+        hanoi(middle(start, end), end, n-1);
+
+    
+    END_IF
+END
